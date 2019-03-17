@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label birthDateLabel;
+            System.Windows.Forms.Label dateLabel;
+            System.Windows.Forms.Label timeLabel;
+            System.Windows.Forms.Label nexAppDateLabel;
+            System.Windows.Forms.Label nextAppTimeLabel;
             this.medDatabaseDataSet = new WindowsFormsApp11.MedDatabaseDataSet();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personTableAdapter = new WindowsFormsApp11.MedDatabaseDataSetTableAdapters.PersonTableAdapter();
@@ -67,7 +71,15 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.timeTextBox = new System.Windows.Forms.TextBox();
+            this.nexAppDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nextAppTimeTextBox = new System.Windows.Forms.TextBox();
             birthDateLabel = new System.Windows.Forms.Label();
+            dateLabel = new System.Windows.Forms.Label();
+            timeLabel = new System.Windows.Forms.Label();
+            nexAppDateLabel = new System.Windows.Forms.Label();
+            nextAppTimeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.medDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingNavigator)).BeginInit();
@@ -124,7 +136,7 @@
             this.personBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.personBindingNavigator.Name = "personBindingNavigator";
             this.personBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.personBindingNavigator.Size = new System.Drawing.Size(892, 25);
+            this.personBindingNavigator.Size = new System.Drawing.Size(1296, 25);
             this.personBindingNavigator.TabIndex = 0;
             this.personBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -237,7 +249,7 @@
             this.personDataGridView.DataSource = this.personBindingSource;
             this.personDataGridView.Location = new System.Drawing.Point(12, 28);
             this.personDataGridView.Name = "personDataGridView";
-            this.personDataGridView.Size = new System.Drawing.Size(659, 154);
+            this.personDataGridView.Size = new System.Drawing.Size(1063, 154);
             this.personDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -275,7 +287,7 @@
             // 
             birthDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             birthDateLabel.AutoSize = true;
-            birthDateLabel.Location = new System.Drawing.Point(677, 25);
+            birthDateLabel.Location = new System.Drawing.Point(1081, 25);
             birthDateLabel.Name = "birthDateLabel";
             birthDateLabel.Size = new System.Drawing.Size(57, 13);
             birthDateLabel.TabIndex = 2;
@@ -285,7 +297,7 @@
             // 
             this.birthDateDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.birthDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.personBindingSource, "BirthDate", true));
-            this.birthDateDateTimePicker.Location = new System.Drawing.Point(680, 46);
+            this.birthDateDateTimePicker.Location = new System.Drawing.Point(1084, 46);
             this.birthDateDateTimePicker.Name = "birthDateDateTimePicker";
             this.birthDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.birthDateDateTimePicker.TabIndex = 3;
@@ -301,6 +313,9 @@
             // 
             // appointmentDataGridView
             // 
+            this.appointmentDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.appointmentDataGridView.AutoGenerateColumns = false;
             this.appointmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.appointmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -316,7 +331,7 @@
             this.appointmentDataGridView.DataSource = this.appointmentBindingSource;
             this.appointmentDataGridView.Location = new System.Drawing.Point(12, 188);
             this.appointmentDataGridView.Name = "appointmentDataGridView";
-            this.appointmentDataGridView.Size = new System.Drawing.Size(868, 302);
+            this.appointmentDataGridView.Size = new System.Drawing.Size(1063, 334);
             this.appointmentDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn6
@@ -374,11 +389,89 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "NextAppTime";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // dateLabel
+            // 
+            dateLabel.AutoSize = true;
+            dateLabel.Location = new System.Drawing.Point(1081, 229);
+            dateLabel.Name = "dateLabel";
+            dateLabel.Size = new System.Drawing.Size(77, 13);
+            dateLabel.TabIndex = 5;
+            dateLabel.Text = "Дата приема:";
+            dateLabel.Click += new System.EventHandler(this.dateLabel_Click);
+            // 
+            // dateDateTimePicker
+            // 
+            this.dateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.appointmentBindingSource, "Date", true));
+            this.dateDateTimePicker.Location = new System.Drawing.Point(1081, 245);
+            this.dateDateTimePicker.Name = "dateDateTimePicker";
+            this.dateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateDateTimePicker.TabIndex = 6;
+            // 
+            // timeLabel
+            // 
+            timeLabel.AutoSize = true;
+            timeLabel.Location = new System.Drawing.Point(1081, 290);
+            timeLabel.Name = "timeLabel";
+            timeLabel.Size = new System.Drawing.Size(84, 13);
+            timeLabel.TabIndex = 7;
+            timeLabel.Text = "Время приема:";
+            timeLabel.Click += new System.EventHandler(this.timeLabel_Click);
+            // 
+            // timeTextBox
+            // 
+            this.timeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.appointmentBindingSource, "Time", true));
+            this.timeTextBox.Location = new System.Drawing.Point(1084, 306);
+            this.timeTextBox.Name = "timeTextBox";
+            this.timeTextBox.Size = new System.Drawing.Size(200, 20);
+            this.timeTextBox.TabIndex = 8;
+            // 
+            // nexAppDateLabel
+            // 
+            nexAppDateLabel.AutoSize = true;
+            nexAppDateLabel.Location = new System.Drawing.Point(1081, 340);
+            nexAppDateLabel.Name = "nexAppDateLabel";
+            nexAppDateLabel.Size = new System.Drawing.Size(138, 13);
+            nexAppDateLabel.TabIndex = 9;
+            nexAppDateLabel.Text = "Дата повторного приема:";
+            // 
+            // nexAppDateDateTimePicker
+            // 
+            this.nexAppDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.appointmentBindingSource, "NexAppDate", true));
+            this.nexAppDateDateTimePicker.Location = new System.Drawing.Point(1084, 367);
+            this.nexAppDateDateTimePicker.Name = "nexAppDateDateTimePicker";
+            this.nexAppDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.nexAppDateDateTimePicker.TabIndex = 10;
+            // 
+            // nextAppTimeLabel
+            // 
+            nextAppTimeLabel.AutoSize = true;
+            nextAppTimeLabel.Location = new System.Drawing.Point(1081, 408);
+            nextAppTimeLabel.Name = "nextAppTimeLabel";
+            nextAppTimeLabel.Size = new System.Drawing.Size(145, 13);
+            nextAppTimeLabel.TabIndex = 11;
+            nextAppTimeLabel.Text = "Время повторного приема:";
+            // 
+            // nextAppTimeTextBox
+            // 
+            this.nextAppTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.appointmentBindingSource, "NextAppTime", true));
+            this.nextAppTimeTextBox.Location = new System.Drawing.Point(1084, 424);
+            this.nextAppTimeTextBox.Name = "nextAppTimeTextBox";
+            this.nextAppTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nextAppTimeTextBox.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 502);
+            this.ClientSize = new System.Drawing.Size(1296, 534);
+            this.Controls.Add(nextAppTimeLabel);
+            this.Controls.Add(this.nextAppTimeTextBox);
+            this.Controls.Add(nexAppDateLabel);
+            this.Controls.Add(this.nexAppDateDateTimePicker);
+            this.Controls.Add(timeLabel);
+            this.Controls.Add(this.timeTextBox);
+            this.Controls.Add(dateLabel);
+            this.Controls.Add(this.dateDateTimePicker);
             this.Controls.Add(this.appointmentDataGridView);
             this.Controls.Add(birthDateLabel);
             this.Controls.Add(this.birthDateDateTimePicker);
@@ -438,6 +531,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DateTimePicker dateDateTimePicker;
+        private System.Windows.Forms.TextBox timeTextBox;
+        private System.Windows.Forms.DateTimePicker nexAppDateDateTimePicker;
+        private System.Windows.Forms.TextBox nextAppTimeTextBox;
     }
 }
 

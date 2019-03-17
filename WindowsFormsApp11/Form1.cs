@@ -33,5 +33,15 @@ namespace WindowsFormsApp11
             this.personTableAdapter.Fill(this.medDatabaseDataSet.Person);
 
         }
+
+        private void dateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
